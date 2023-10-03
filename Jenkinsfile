@@ -11,7 +11,7 @@ pipeline {
                 sleep 5
 
                 script {
-                    println(env.CHANGE_ID)
+                    println(env.GIT_COMMIT)
                     error("Aborting this job, because there are other jobs in the queue from this PR!")
                 }
 
