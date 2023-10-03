@@ -11,8 +11,11 @@ pipeline {
                 sleep 5
 
                 script {
-                    error("Clearing the queue!")
+                    // error("Clearing the queue!")
+                    return
                 }
+
+                echo "Running QA tests..."
             }
         }
     }
