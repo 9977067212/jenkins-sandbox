@@ -12,7 +12,7 @@ pipeline {
 
                 script {
                     print(env.GIT_URL)
-                    print(env.BRANCH_NAME)
+                    print(env.CHANGE_ID)
                     
                     // Get the list of queued items
                     def queuedItems = Jenkins.instance.queue.items
