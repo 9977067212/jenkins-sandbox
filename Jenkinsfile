@@ -9,6 +9,10 @@ pipeline {
             steps {
                 echo "Testing..."
                 sleep 5
+
+                script {
+                    error("Clearing the queue!")
+                }
             }
         }
     }
