@@ -19,6 +19,7 @@ pipeline {
 
                     // Print information about each queued item
                     queuedItems.each { item ->
+                        print(item)
                         echo "Queued Item ID: ${item.id}"
                         echo "Queued Item Task Name: ${item.task.name}"
                         echo "Queued Item Cause: ${item.getCauses()[0]?.shortDescription}"
