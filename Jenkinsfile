@@ -12,7 +12,7 @@ pipeline {
 
                 script {
                     println("PR:")
-                    println(env.GIT_COMMIT)
+                    println(env.CHANGE_ID)
                     error("Aborting this job, because there are other jobs in the queue from this PR!")
                 }
 
