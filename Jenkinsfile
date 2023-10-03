@@ -11,8 +11,7 @@ pipeline {
                 sleep 5
 
                 script {
-                    // error("Clearing the queue!")
-                    return
+                    error("Aborting this job, because there are other jobs in the queue from this PR!")
                 }
 
                 echo "Running QA tests..."
