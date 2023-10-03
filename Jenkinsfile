@@ -8,9 +8,10 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing..."
-                sleep 5
+                sleep 10
 
                 script {
+                    println(Jenkins.instance.queue.items)
                     error("Aborting this job, because there are other jobs in the queue from this PR!")
                 }
 
