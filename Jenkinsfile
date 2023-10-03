@@ -11,6 +11,8 @@ pipeline {
                 sleep 5
 
                 script {
+                    print(env.GIT_URL)
+                    
                     // Get the list of queued items
                     def queuedItems = Jenkins.instance.queue.items
 
