@@ -1,21 +1,23 @@
 pipeline {
-    agent { 
-        node {
-            label 'built-in'
-        }
+    agent {
+        label "default"
     }
     stages {
         stage('Test') {
             steps {
-                echo "Testing..."
-                sleep 5
-
                 script {
-                    println(env.GIT_COMMIT)
-                    error("Aborting this job, because there are other jobs in the queue from this PR!")
+                    echo "Starting..."
+                    
+                    withCredentials([
+                        file(credentialsId: 'rtb-migrations-private-key', variable: 'PRIVATE_SSH_KEY'),
+                        file(credentialsId: 'rtb-migrations-private-key', variable: 'KEY')
+                    ]) {
+                        sh 'chmod +x script.sh'
+                        sh './script.sh'
+                    }
+                    
+                    echo "Finishing..."
                 }
-
-                echo "Running QA tests..."
             }
         }
     }
