@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo $PRIVATE_SSH_KEY
+echo $SSH_PRIVATE_KEY
 echo $SSH_USER
 
-cat $PRIVATE_SSH_KEY
+cat $SSH_PRIVATE_KEY
