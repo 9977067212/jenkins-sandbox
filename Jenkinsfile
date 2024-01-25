@@ -8,8 +8,8 @@ pipeline {
                 echo "Starting..."
                 
                 withCredentials([
-                    file(credentialsId: 'rtb-migrations-private-key', variable: 'PRIVATE_SSH_KEY'),
-                    file(credentialsId: 'rtb-migrations-private-key', variable: 'SSH_USER')
+                    file(credentialsId: 'rtb-migrations-ssh-private-key', variable: 'SSH_PRIVATE_KEY'),
+                    file(credentialsId: 'rtb-migrations-ssh-user', variable: 'SSH_USER')
                 ]) {
                     sh 'chmod +x script.sh'
                     sh './script.sh'
