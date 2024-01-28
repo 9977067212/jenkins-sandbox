@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo "Starting..."
                 
-                withCredentials([sshUserPrivateKey(credentialsId: 'ssh-credentials', usernameVariable: 'SSH_USER', keyFileVariable: 'SSH_PRIVATE_KEY')]) {
+                withCredentials([sshUserPrivateKey(credentialsId: 'rtb-migrations-ssh', usernameVariable: 'SSH_USER', keyFileVariable: 'SSH_PRIVATE_KEY')]) {
                     sh 'chmod +x script.sh'
                     sh './script.sh'
                 }
